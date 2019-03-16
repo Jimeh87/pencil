@@ -9,7 +9,7 @@ A Canvas mouse / touch detection directive for Angular. It uses Bresenham's Line
 
 ## Latest Version
 
-@jimeh87/pencil@1.0.0
+@jimeh87/pencil@1.0.1
 
 ## Setup
 
