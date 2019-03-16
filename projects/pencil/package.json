@@ -1,13 +1,24 @@
 {
   "name": "@jimeh87/pencil",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Mouse / Touch coordinate canvas detection directive.",
   "author": "Jim Rennie",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jimeh87/pencil.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jimeh87/pencil/issues"
+  },
+  "homepage": "https://github.com/Jimeh87/pencil",
   "private": false,
   "keywords": [
     "angular",
     "canvas",
-    "directive"
+    "directive",
+    "mobile",
+    "mouse",
+    "touch"
   ],
   "license": "MIT",
   "peerDependencies": {

@@ -16,18 +16,18 @@ A Canvas mouse / touch detection directive for Angular. It uses Bresenham's Line
 Add dependency `@jimeh87/pencil`
 
 npm:
-```
+```shell
 npm install --save @jimeh87/pencil
 ```
 
 yarn:
-```
+```shell
 yarn add @jimeh87/pencil
 ```
 
 Add the `PencilModule` to your application module
 
-```angular2
+```js
 import { PencilModule } from '@jimeh87/pencil';
 
 @NgModule({
@@ -40,13 +40,13 @@ export class YourAppModule {
 ```
 
 Add the directive to your canvas:
-```angular2html
+```html
 <canvas (jrPencil)="onDraw($event)"
         style="width: 500px; height: 500px">
 </canvas>
 ```
 
-```angular2
+```js
 export class AppComponent {
 
   onDraw(point: { x: number, y: number }) {
