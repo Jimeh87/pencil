@@ -1,0 +1,17 @@
+{
+  "name": "@jimeh87/pencil",
+  "version": "0.2.0",
+  "description": "Mouse / Touch coordinate canvas detection directive.",
+  "author": "Jim Rennie",
+  "private": false,
+  "keywords": [
+    "angular",
+    "canvas",
+    "directive"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  }
+}

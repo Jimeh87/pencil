@@ -1,27 +1,77 @@
 # Pencil
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+A Canvas mouse / touch detection directive for Angular. It uses Bresenham's Line Drawing Algorithm to insure a smooth draw.
 
-## Development server
+## Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[StackBlitz Demo](https://stackblitz.com/edit/pencil-sample)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Latest Version
 
-## Build
+@jimeh87/pencil@1.0.0
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Setup
 
-## Running unit tests
+Add dependency `@jimeh87/pencil`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+npm:
+```
+npm install --save @jimeh87/pencil
+```
 
-## Running end-to-end tests
+yarn:
+```
+yarn add @jimeh87/pencil
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Add the `PencilModule` to your application module
 
-## Further help
+```angular2
+import { PencilModule } from '@jimeh87/pencil';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@NgModule({
+  ...
+  imports: [PencilModule, ...],
+  ...
+})
+export class YourAppModule {
+}
+```
+
+Add the directive to your canvas:
+```angular2html
+<canvas (jrPencil)="onDraw($event)"
+        style="width: 500px; height: 500px">
+</canvas>
+```
+
+```angular2
+export class AppComponent {
+
+  onDraw(point: { x: number, y: number }) {
+    console.log(point);
+  }
+
+}
+```
+
+## API
+
+### Pencil Directive
+
+#### Selector 
+`[jrPencil]`
+
+##### Properties
+| Property                                                                                | Description                                                                            | Example                                                                                   |
+|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| @Output('jrPencil') pencilPositionEvent = new EventEmitter<{ x: number, y: number }>(); | Emits mouse coordinates when `mousedown` or `touchstart` until `mouseup` or `touchend` | ``` <canvas (jrPencil)="onDraw($event)"></canvas>  ```                                    |
+| @Output() pencilUp = new EventEmitter<void>();                                          | Emits event when `mouseup` or `touchend`                                               | ``` <canvas (jrPencil)="onDraw($event)"          (pencilUp)="onPencilUp()"></canvas>  ``` |
+| @Input()  pencilDisabled = false;                                                       | disables pencil directive                                                              | ``` <canvas (jrPencil)="onDraw($event)"         [pencilDisabled]="true"></canvas> ```     |
+
+## Development
+
+### Publishing
+
+Run `yarn build` and then in `./dist/pencil` run `yarn publish` 

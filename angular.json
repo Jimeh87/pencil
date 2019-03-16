@@ -2,5 +2,142 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "pencil-samples": {
+      "root": "projects/pencil-samples/",
+      "sourceRoot": "projects/pencil-samples/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/pencil-samples",
+            "index": "projects/pencil-samples/src/index.html",
+            "main": "projects/pencil-samples/src/main.ts",
+            "polyfills": "projects/pencil-samples/src/polyfills.ts",
+            "tsConfig": "projects/pencil-samples/tsconfig.app.json",
+            "assets": [
+              "projects/pencil-samples/src/favicon.ico",
+              "projects/pencil-samples/src/assets"
+            ],
+            "styles": [
+              "projects/pencil-samples/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/pencil-samples/src/environments/environment.ts",
+                  "with": "projects/pencil-samples/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pencil-samples:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pencil-samples:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pencil-samples:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pencil-samples/src/test.ts",
+            "polyfills": "projects/pencil-samples/src/polyfills.ts",
+            "tsConfig": "projects/pencil-samples/tsconfig.spec.json",
+            "karmaConfig": "projects/pencil-samples/karma.conf.js",
+            "styles": [
+              "projects/pencil-samples/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/pencil-samples/src/favicon.ico",
+              "projects/pencil-samples/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pencil-samples/tsconfig.app.json",
+              "projects/pencil-samples/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "pencil": {
+      "root": "projects/pencil",
+      "sourceRoot": "projects/pencil/src",
+      "projectType": "library",
+      "prefix": "jr",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/pencil/tsconfig.lib.json",
+            "project": "projects/pencil/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pencil/src/test.ts",
+            "tsConfig": "projects/pencil/tsconfig.spec.json",
+            "karmaConfig": "projects/pencil/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pencil/tsconfig.lib.json",
+              "projects/pencil/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "pencil"
 }

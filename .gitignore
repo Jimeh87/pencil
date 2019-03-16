@@ -16,6 +16,8 @@ speed-measure-plugin.json
 
 # IDEs and editors
 /.idea
+/.iml
+pencil\.iml
 .project
 .classpath
 .c9/
@@ -44,3 +46,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
