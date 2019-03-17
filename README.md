@@ -9,7 +9,7 @@ A Canvas mouse / touch detection directive for Angular. It uses Bresenham's Line
 
 ## Latest Version
 
-@jimeh87/pencil@1.0.1
+@jimeh87/pencil@1.0.2
 
 ## Setup
 
@@ -69,6 +69,10 @@ export class AppComponent {
 | @Output('jrPencil') pencilPositionEvent = new EventEmitter<{ x: number, y: number }>(); | Emits mouse coordinates when `mousedown` or `touchstart` until `mouseup` or `touchend` | ``` <canvas (jrPencil)="onDraw($event)"></canvas>  ```                                    |
 | @Output() pencilUp = new EventEmitter<void>();                                          | Emits event when `mouseup` or `touchend`                                               | ``` <canvas (jrPencil)="onDraw($event)"          (pencilUp)="onPencilUp()"></canvas>  ``` |
 | @Input()  pencilDisabled = false;                                                       | disables pencil directive                                                              | ``` <canvas (jrPencil)="onDraw($event)"         [pencilDisabled]="true"></canvas> ```     |
+
+## Usage
+
+* [https://gameoflife.xyz](https://gameoflife.xyz)
 
 ## Development
 
