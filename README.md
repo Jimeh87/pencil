@@ -1,6 +1,6 @@
 # Pencil
 
-A Canvas mouse / touch detection directive for Angular. It uses Bresenham's Line Drawing Algorithm to insure a smooth draw.
+A Canvas mouse / touch detection directive for Angular. It uses Bresenham's Line Drawing Algorithm to ensure a smooth draw.
 
 ## Demo
 
