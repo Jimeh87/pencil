@@ -267,12 +267,6 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@jimeh87/pencil@0.1.0-SNAPSHOT":
-  version "0.1.0-SNAPSHOT"
-  resolved "https://registry.yarnpkg.com/@jimeh87/pencil/-/pencil-0.1.0-SNAPSHOT.tgz#530022853487175a45318743362b7be608051d5b"
-  dependencies:
-    tslib "^1.9.0"
-
 "@ngtools/json-schema@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
@@ -1739,8 +1733,8 @@ decamelize@^2.0.0:
     xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
 
 deep-equal@^1.0.1:
   version "1.0.1"
